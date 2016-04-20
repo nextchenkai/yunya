@@ -1,0 +1,47 @@
+//
+//  yunya.pch
+//  yunya
+//
+//  Created by WongSuechang on 16/3/17.
+//  Copyright © 2016年 emi365. All rights reserved.
+///
+
+#define yunya_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef __OBJC__
+    #import "AFNetworking.h"
+    #import "ViewModel.h"
+    #import "SCHttpOperation.h"
+    #import "Tools.h"
+    #import "UIView+EMIkit.h"
+    #import "YYNavigationController.h"
+    #import "MJExtension.h"
+    #import "UIImageView+WebCache.h"
+    #import "UITableView+FDTemplateLayoutCell.h"
+    #import "BEMCheckBox.h"
+    #import "UILabel+StringFrame.h"
+    #import "UIView+Toast.h"
+    #import "Userinfo.h"//全局信息（与nsuserdefault里面类型同步）
+    #import "MJRefresh.h"
+    #import "LCActionSheet.h"
+    #import "UIView+SDAutoLayout.h"
+    #import "YYPickerView.h"
+    #import "YYAlertView.h"
+    #import "YYAlertViewController.h"
+
+#define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)/**是否为iOS7*/
+
+//接口地址
+//#define serverIP @"http://www.emi365.com.cn/yy/appinterface"
+#define serverIP @"http://192.168.2.143:8080/yy/appinterface"
+#define imgIP @"http://192.168.2.143:8080"
+
+//屏幕尺寸
+#define screenWidth [UIScreen mainScreen].bounds.size.width
+#define screenHeight [UIScreen mainScreen].bounds.size.height
+
+
+#endif /* yunya_pch */
