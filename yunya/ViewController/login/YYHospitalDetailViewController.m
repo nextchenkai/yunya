@@ -44,7 +44,26 @@
     //存hospital
     _shareInstance.hospital = _hos.name;
     //返回基本信息页面
-    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:(self.navigationController.viewControllers.count-3)] animated:YES];
+    if(self.flag==0){
+        [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:(self.navigationController.viewControllers.count-3)] animated:YES];
+    }else{
+        [self saveHospital];
+    }
+}
+
+- (void)saveHospital {
+    __unsafe_unretained typeof(self) weakself = self;
+    [_viewmodel setBlockWithReturnBlock:^(id returnValue) {
+        if(returnValue){
+            [weakself.navigationController popToViewController:[weakself.navigationController.viewControllers objectAtIndex:(weakself.navigationController.viewControllers.count-3)] animated:YES];
+        }
+    } WithErrorBlock:^(id errorCode) {
+        
+    } WithFailureBlock:^{
+        
+    }];
+    
+    [self.viewmodel saveHospitalWithDN:self.user.dn withMemberid:self.user.memberid withHospitalid:[NSString stringWithFormat:@"%d",_hospitalid]];
 }
 //获取网络数据
 - (void)fetchHospitalDetail{

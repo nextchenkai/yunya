@@ -94,6 +94,7 @@
         case 3:{
             UIStoryboard *story = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
             YYChooseHospitalViewController *viewController = [story instantiateViewControllerWithIdentifier:@"choosehospital"];
+            viewController.flag = 1;
             [self.navigationController pushViewController:viewController animated:YES];
         }
             

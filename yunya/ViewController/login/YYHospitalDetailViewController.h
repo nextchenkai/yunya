@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *hospitalname;//医院名字
 @property (weak, nonatomic) IBOutlet UILabel *hospitaladdress;//医院地址
 
+@property (nonatomic, assign) int flag;//0:确认选择,不更新医院 1:确认选择,不更新医院
 
 @end
