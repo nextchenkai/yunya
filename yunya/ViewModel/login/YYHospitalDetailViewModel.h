@@ -11,4 +11,8 @@
 @interface YYHospitalDetailViewModel : SCViewModel
 //获取医院详情
 - (void)fetchHospitalInfoWithInt:(int) hospitalid;
+
+
+//sethospital.do
+- (void)saveHospitalWithDN:(NSString *)dn withMemberid:(NSString *)memberid withHospitalid:(NSString *)hospitalid;
 @end

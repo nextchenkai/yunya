@@ -218,6 +218,7 @@
     //医院详情界面
     YYHospitalDetailViewController *destview = [segue destinationViewController];
     destview.hospitalid = _hospitalid;
+    destview.flag = self.flag;
 }
 
 

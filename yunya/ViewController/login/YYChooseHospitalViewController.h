@@ -11,5 +11,5 @@
 @interface YYChooseHospitalViewController : EMIViewController
 @property (weak, nonatomic) IBOutlet UITableView *hospitalTable;//医院列表
 @property (weak, nonatomic) IBOutlet UITextField *hospitalSearchTextField;//搜索医院框
-
+@property (nonatomic, assign) int flag;//0:确认选择,不更新医院 1:确认选择,不更新医院
 @end

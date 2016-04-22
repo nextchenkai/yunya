@@ -30,4 +30,26 @@
     }];
 
 }
+
+- (void)saveHospitalWithDN:(NSString *)dn withMemberid:(NSString *)memberid withHospitalid:(NSString *)hospitalid {
+    NSDictionary *params = @{@"dn":dn,@"memberid":memberid,@"hospitalid":hospitalid};
+    [SCHttpOperation requestWithMethod:RequestMethodTypePost withURL:[NSString stringWithFormat:@"%@%@",serverIP,@"/sethospital.do"] withparameter:params WithReturnValeuBlock:^(id returnValue) {
+        [self savehospitalSuccessWithDic:returnValue];
+    } WithErrorCodeBlock:^(id errorCode) {
+        [self errorCodeWithDic:errorCode];
+    } WithFailureBlock:^{
+        [self netFailure];
+    }];
+}
+
+- (void)savehospitalSuccessWithDic:(NSDictionary *)returnValue {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:returnValue];
+    long success = [(NSNumber *)[dict objectForKey:@"success"] longValue];
+    if(success==1){
+        self.returnBlock(@"1");
+    }else{
+        self.returnBlock(nil);
+    }
+}
+
 @end
